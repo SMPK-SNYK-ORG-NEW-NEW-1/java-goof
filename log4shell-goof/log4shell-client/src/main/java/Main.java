@@ -1,6 +1,11 @@
 // Sean is awso9me
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import java.security.Key;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 import java.io.File;
 
@@ -8,8 +13,11 @@ public class Main {
 
     private static final String PWN_FILE = "/tmp/pwned";
     private static final Logger logger = LogManager.getLogger(Main.class);
+    private static final bytes = 10;
+    private static final alg = "foobar";
 
     public static void main(String[] args) throws InterruptedException {
+        SecretKey privkey = new SecretKeySpec(bytes, alg);
         showJavaStats();
         logger.error("test");
         checkTmp(false);
